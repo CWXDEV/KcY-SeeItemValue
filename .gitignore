@@ -1,0 +1,22 @@
+## KcY-SeeItemValue
+*.exe
+*.zip
+itemValue/bin/
+itemValue/bin//obj/
+itemValue/bin//Properties/
+itemValue/obj/
+*.editorconfig
+
+## visual studio
+.vs
+.idea
+slnx.sqlite
+slnx-journal.sqlite
+
+## nodejs
+node_modules
+node.exe
+package-lock.json
+
+## windows
+desktop.ini
