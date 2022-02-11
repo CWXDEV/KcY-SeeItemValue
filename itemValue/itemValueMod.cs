@@ -115,7 +115,7 @@ namespace itemValueMod
                 _price *= dogtag.Level;
             }
 
-            _price *= item.StackObjectsCount;
+            //_price *= item.StackObjectsCount;
 
             return _price;
         }
