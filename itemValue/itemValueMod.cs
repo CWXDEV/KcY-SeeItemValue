@@ -1,6 +1,6 @@
 ﻿/* Original Author: KyC
- * CWX - updated to work for 2.2.1 AKI
- * Client version: 0.12.12.15.16584
+ * CWX - updated to work for 2.2.3 AKI
+ * Client version: 0.12.12.15.16909
  *  - removed the need for KyC's ModLoader
  *  - Commented out the code for stackCount total worth
  *  - Commented out the code for weapon parts total worth
@@ -13,15 +13,17 @@ using HarmonyLib;
 using System;
 using System.Collections.Generic;
 using Aki.Common.Utils;
+using System.Linq;
+using Newtonsoft.Json;
 
-using Ammo = GClass2087;
-using Grenade = GClass2090;
-using GrenadeTemplate = GClass1986;
-using SecureContainer = GClass2049;
-using SecureContainerTemplate = GClass1948;
-using Container = GClass2000; // CWX - leaving in as commented out code uses this
-using Magazine = GClass2037; // CWX - leaving in as commented out code uses this
-using ItemAttribute = GClass2101;
+using Ammo = GClass2076;
+using Grenade = GClass2079;
+using GrenadeTemplate = GClass1975;
+using SecureContainer = GClass2038;
+using SecureContainerTemplate = GClass1937;
+using Container = GClass2001; // CWX - leaving in as commented out code uses this
+using Magazine = GClass2026; // CWX - leaving in as commented out code uses this
+using ItemAttribute = GClass2090;
 using Aki.Common.Http;
 
 namespace itemValueMod
@@ -37,25 +39,29 @@ namespace itemValueMod
             var atts = new List<ItemAttribute>();
             atts.AddRange(__instance.Attributes);
             __instance.Attributes = atts;
-
             ItemAttribute attr = new ItemAttribute(EItemAttributeId.MoneySum)
             {
-                Name = "RUB ₽",
-                StringValue = new Func<string>(__instance.ValueStr),
+                StringValue = new Func<string>(__instance.ValueStr), // ₽
+                Name = ValueExtension.ValueTrName(), //new Func<string>(ValueExtension.ValueTrName).ToString(),
                 DisplayType = new Func<EItemAttributeDisplayType>(() => EItemAttributeDisplayType.Compact)
             };
             __instance.Attributes.Add(attr);
         }
     }
+
     public static class ValueExtension
     {
+        public static string name = "test";
         public static double Value(this Item item)
         {
-            var template = item.Template; 
+            var template = item.Template;
             string itemId = template._id;
-            double _price;
+            double _price = 1;
             var json = RequestHandler.GetJson($"/cwx/itemvaluemod/{itemId}"); // CWX - sends ID to server
-            _price = Json.Deserialize<int>(json); // CWX - server will respond with price of the item
+            Dictionary<string, string> temp = JsonConvert.DeserializeObject<Dictionary<string, string>>(json);
+            var price = temp["result"];
+            name = temp["name"];
+            _price = Convert.ToDouble(price);
 
             // CWX - I have commented out total worth of items for guns etc as it was causing huge client stutters, i think it showing for each item only is better anyway
             // Container
@@ -122,6 +128,11 @@ namespace itemValueMod
         public static string ValueStr(this Item item)
         {
             return Math.Round(item.Value()).ToString();
+        }
+
+        public static string ValueTrName()
+        {
+            return name;
         }
     }
     [HarmonyPatch]

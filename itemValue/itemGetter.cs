@@ -1,7 +1,7 @@
-﻿namespace itemValueMod
-{
-    public struct itemGetter
-    {
-        public double sPrice { get; set; }
-    }
-}
+﻿//namespace itemValueMod
+//{
+//    public struct itemGetter
+//    {
+//        public double sPrice { get; set; }
+//    }
+//}
