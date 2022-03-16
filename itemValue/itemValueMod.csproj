@@ -2,42 +2,40 @@
 
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
-    <Version>1.1.1</Version>
+    <Version>1.2.0</Version>
+    <AssemblyName>KcY-SeeItemValue</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
     <Reference Include="0Harmony">
-      <HintPath>..\..\..\..\..\..\..\AKI PROJECT\2.2.3 build - client 16909\EscapeFromTarkov_Data\Managed\0Harmony.dll</HintPath>
-    </Reference>
-    <Reference Include="Aki.Build">
-      <HintPath>..\..\..\..\..\..\..\AKI PROJECT\2.2.3 build - client 16909\EscapeFromTarkov_Data\Managed\Aki.Build.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\AKI PROJECT\AKI 2.3.0 17107 Bepin\BepInEx\core\0Harmony.dll</HintPath>
     </Reference>
     <Reference Include="Aki.Common">
-      <HintPath>..\..\..\..\..\..\..\AKI PROJECT\2.2.3 build - client 16909\EscapeFromTarkov_Data\Managed\Aki.Common.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\AKI PROJECT\AKI 2.3.0 17107 Bepin\EscapeFromTarkov_Data\Managed\Aki.Common.dll</HintPath>
     </Reference>
     <Reference Include="Aki.Reflection">
-      <HintPath>..\..\..\..\..\..\..\AKI PROJECT\2.2.3 build - client 16909\EscapeFromTarkov_Data\Managed\Aki.Reflection.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\AKI PROJECT\AKI 2.3.0 17107 Bepin\EscapeFromTarkov_Data\Managed\Aki.Reflection.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\..\..\..\..\AKI PROJECT\2.2.3 build - client 16909\EscapeFromTarkov_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\AKI PROJECT\AKI 2.3.0 17107 Bepin\EscapeFromTarkov_Data\Managed\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="BepInEx">
+      <HintPath>..\..\..\..\..\..\..\AKI PROJECT\AKI 2.3.0 17107 Bepin\BepInEx\core\BepInEx.dll</HintPath>
     </Reference>
     <Reference Include="Comfort">
-      <HintPath>..\..\..\..\..\..\..\AKI PROJECT\2.2.3 build - client 16909\EscapeFromTarkov_Data\Managed\Comfort.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\AKI PROJECT\AKI 2.3.0 17107 Bepin\EscapeFromTarkov_Data\Managed\Comfort.dll</HintPath>
     </Reference>
     <Reference Include="ItemComponent.Types">
-      <HintPath>..\..\..\..\..\..\..\AKI PROJECT\2.2.3 build - client 16909\EscapeFromTarkov_Data\Managed\ItemComponent.Types.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\AKI PROJECT\AKI 2.3.0 17107 Bepin\EscapeFromTarkov_Data\Managed\ItemComponent.Types.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\..\..\..\..\..\AKI PROJECT\2.2.3 build - client 16909\EscapeFromTarkov_Data\Managed\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="NLog">
-      <HintPath>..\..\..\..\..\..\..\AKI PROJECT\2.2.3 build - client 16909\EscapeFromTarkov_Data\Managed\NLog.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\AKI PROJECT\AKI 2.3.0 17107 Bepin\EscapeFromTarkov_Data\Managed\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine">
-      <HintPath>..\..\..\..\..\..\..\AKI PROJECT\2.2.3 build - client 16909\EscapeFromTarkov_Data\Managed\UnityEngine.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\AKI PROJECT\AKI 2.3.0 17107 Bepin\EscapeFromTarkov_Data\Managed\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\..\..\..\..\..\..\AKI PROJECT\2.2.3 build - client 16909\EscapeFromTarkov_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\AKI PROJECT\AKI 2.3.0 17107 Bepin\EscapeFromTarkov_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
   </ItemGroup>
 

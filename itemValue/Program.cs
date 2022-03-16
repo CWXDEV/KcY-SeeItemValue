@@ -1,13 +1,17 @@
-﻿using HarmonyLib;
+﻿using BepInEx;
+using HarmonyLib;
 
 namespace itemValueMod
 {
-    public class Program
+    [BepInPlugin("com.KcY.SeeItemValue", "KcY-SeeItemValue", "1.2.0")]
+    public class Plugin : BaseUnityPlugin
     {
-        static void Main(string[] args)
+        private void Awake()
         {
-            var harmony = new Harmony("com.CWX.ItemValuePatch");
-            harmony.PatchAll();
+            new ItemPatch().Enable();
+            new AmmoPatch().Enable();
+            new GrenadePatch().Enable();
+            new SecureContainerPatch().Enable();
         }
     }
 }
